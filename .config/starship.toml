@@ -8,7 +8,6 @@ ${custom.giturl}\
 $git_branch\
 $git_state\
 $git_status\
-$fill\
 $all\
 $line_break\
 $character\
@@ -64,9 +63,9 @@ symbol = "🦕 "
 symbol = ""
 format = '[ $symbol( $context) ]($style)'
 
-[fill]
-symbol = " "
-style = "bold black"
+# [fill]
+# symbol = " "
+# style = "bold black"
 
 [git_branch]
 symbol = "[](black) "
