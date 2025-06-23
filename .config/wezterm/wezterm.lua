@@ -1,5 +1,9 @@
+local w = require("utils/wallpaper")
+
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
+
+local wallpapers_glob = os.getenv("HOME") .. "/.config/wezterm/wallpapers/**"
 
 config.automatically_reload_config = true
 
@@ -36,14 +40,15 @@ config.audible_bell = "Disabled"
 config.window_background_opacity = 0.85
 
 config.background = {
-	{
-		source = {
-			File = "C:\\Users\\maxime.bellet\\Pictures\\Wallpaper\\wallhaven-2ye9jm_2560x1440.png",
-		},
-		width = "Cover",
-		height = "Cover",
-		opacity = 1,
-	},
+	w.get_wallpaper(wallpapers_glob),
+	-- {
+	-- 	source = {
+	-- 		File = "C:\\Users\\maxime.bellet\\Pictures\\Wallpaper\\wallhaven-2ye9jm_2560x1440.png",
+	-- 	},
+	-- 	width = "Cover",
+	-- 	height = "Cover",
+	-- 	opacity = 1,
+	-- },
 	{
 		source = {
 			Color = "#1e1e2e",
