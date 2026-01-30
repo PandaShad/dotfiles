@@ -44,3 +44,4 @@ opt.updatetime = 50
 opt.colorcolumn = "80"
 opt.clipboard:append("unnamedplus")
 opt.mouse = "a"
+vim.o.statuscolumn = ""
