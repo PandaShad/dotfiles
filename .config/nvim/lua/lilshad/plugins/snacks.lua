@@ -63,7 +63,7 @@ return {
         { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
         { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
         { "<leader>ft", function() Snacks.picker.todo_comments() end, desc = "Find All Todo Comments" },
-        { "<leader>fT", function() Snacks.picker.todo_comments({ keywords = { "TODO","FORGETNOT","FIXME" } }) end, desc = "Find TODO, FIXME and FORGETNOT Comments" },
+        { "<leader>fT", function() Snacks.picker.todo_comments({ keywords = { "TODO","FIX","FIXME" } }) end, desc = "Find TODO, FIX and FIXME Comments" },
 
         -- Picker (grep)
         { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
