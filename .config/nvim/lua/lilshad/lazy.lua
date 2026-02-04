@@ -20,6 +20,7 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     { import = "lilshad.plugins" },
+    { import = "lilshad.plugins.git" },
     { import = "lilshad.plugins.lsp" },
   },
   -- Configure any other settings here. See the documentation for more details.
