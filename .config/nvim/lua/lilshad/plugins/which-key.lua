@@ -2,9 +2,19 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
+        preset = "modern",
+        spec = {
+            {
+                mode = { "n", "x" },
+                { "<leader>e", group = "file explorer" },
+                { "<leader>f", group = "file/find" },
+                { "<leader>g", group = "git" },
+                { "<leader>gh", group = "hunks" },
+                { "<leader>l", group = "lazygit" },
+                { "<leader>s", group = "search" },
+                { "<leader>t", group = "tabs/theme" },
+            }
+        }
     },
     keys = {
         {
