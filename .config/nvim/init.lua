@@ -1,2 +1,2 @@
-require("lilshad.core")
-require("lilshad.lazy")
+require("config.lazy")
+require("core")
