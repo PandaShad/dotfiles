@@ -1,10 +1,9 @@
-vim.g.netrw_banner = 0
-
 local opt = vim.opt
 
--- Line Numbers
+-- Line numbers
 opt.relativenumber = true
 opt.number = true
+opt.signcolumn = "yes"
 
 -- Indentation
 opt.tabstop = 4
@@ -28,22 +27,32 @@ opt.inccommand = "split"
 opt.ignorecase = true
 opt.smartcase = true
 
--- Styling
+-- Appearance
 opt.termguicolors = true
-opt.scrolloff = 8
-opt.signcolumn = "yes"
 opt.cursorline = true
+opt.colorcolumn = "80"
+opt.scrolloff = 8
+opt.sidescrolloff = 8
+opt.smoothscroll = true
 
--- backspace
-opt.backspace = { "start", "eol", "indent" }
+-- Borders. 0.12 makes these global, so plugins no longer each need a
+-- `border = "rounded"` of their own -- floats and the popupmenu just inherit.
+opt.winborder = "rounded"
+opt.pumborder = "rounded"
 
--- Window splits
+-- Splits
 opt.splitright = true
 opt.splitbelow = true
 
+-- Editing behaviour
+opt.backspace = { "start", "eol", "indent" }
+opt.confirm = true -- prompt instead of failing on :q with unsaved changes
+
+-- Timings
+opt.updatetime = 200
+
 -- Misc
 opt.isfname:append("@-@")
-opt.updatetime = 50
-opt.colorcolumn = "80"
 opt.clipboard:append("unnamedplus")
 opt.mouse = "a"
+vim.o.statuscolumn = ""
