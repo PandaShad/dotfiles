@@ -40,6 +40,13 @@ opt.smoothscroll = true
 opt.winborder = "rounded"
 opt.pumborder = "rounded"
 
+-- Folds come from treesitter (see lua/plugins/treesitter.lua). Start fully
+-- unfolded -- Neovim's default foldlevel of 0 would collapse every file on open
+-- as soon as foldmethod=expr is set.
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
+
 -- Splits
 opt.splitright = true
 opt.splitbelow = true
