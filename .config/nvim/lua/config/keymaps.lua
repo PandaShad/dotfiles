@@ -31,10 +31,10 @@ map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 
 -- Window management.
-map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
-map("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
-map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
-map("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
+map("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
+map("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
+map("n", "<leader>we", "<C-w>=", { desc = "Make splits equal size" })
+map("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current split" })
 
 -- Tabs
 map("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })

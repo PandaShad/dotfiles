@@ -24,7 +24,10 @@ local statefile = vim.fs.joinpath(vim.fn.stdpath("state"), "theme.txt")
 local function read()
   local ok, lines = pcall(vim.fn.readfile, statefile)
   local name = ok and lines and vim.trim(lines[1] or "") or ""
-  return vim.tbl_contains(M.themes, name) and name or nil
+  -- Deliberately not checked against M.themes: the snacks colorschemes picker
+  -- offers every scheme on the runtimepath, so a valid choice can legitimately
+  -- be outside that curated list. apply() pcall-falls back if it won't load.
+  return name ~= "" and name or nil
 end
 
 -- The variant actually selected. `vim.g.colors_name` is lossy: every
@@ -57,6 +60,22 @@ end
 
 ---Choose a theme interactively. Persists the choice.
 function M.pick()
+  local ok, snacks = pcall(require, "snacks")
+  if ok and snacks.picker then
+    return snacks.picker.colorschemes({
+      confirm = function(picker, item)
+        picker:close()
+        if item then
+          picker.preview.state.colorscheme = nil
+          vim.schedule(function()
+            M.set(item.text)
+          end)
+        end
+      end,
+    })
+  end
+
+  -- Fallback for when snacks isn't available: the curated list, no preview.
   vim.ui.select(M.themes, {
     prompt = "Colorscheme",
     format_item = function(item)

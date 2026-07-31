@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 local opt = vim.opt
 
 -- Line numbers
@@ -46,6 +49,8 @@ opt.pumborder = "rounded"
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
+-- snacks.statuscolumn only draws fold markers when foldcolumn ~= "0".
+opt.foldcolumn = "1"
 
 -- Splits
 opt.splitright = true
@@ -62,4 +67,3 @@ opt.updatetime = 200
 opt.isfname:append("@-@")
 opt.clipboard:append("unnamedplus")
 opt.mouse = "a"
-vim.o.statuscolumn = ""
