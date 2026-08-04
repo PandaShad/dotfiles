@@ -20,6 +20,7 @@ return {
                 { "<leader>t", group = "tab" },
                 { "<leader>u", group = "ui / toggle" },
                 { "<leader>w", group = "window" },
+                { "gs", group = "surround" },
                 -- Neovim 0.12 binds grn/gra/grr/gri/grt/grx here (:h lsp-defaults).
                 { "gr", group = "lsp" },
             },
