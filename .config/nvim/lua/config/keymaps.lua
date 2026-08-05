@@ -43,7 +43,10 @@ map("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 map("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- Buffers
-map("n", "[b", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
-map("n", "]b", "<cmd>bnext<CR>", { desc = "Next buffer" })
+-- [b / ]b live in the bufferline spec: plain bnext/bprevious follow buffer
+-- number order, which diverges from the bar once buffers are reordered.
 map("n", "<leader>bb", "<cmd>e #<CR>", { desc = "Switch to other buffer" })
-map("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete buffer" })
+-- Snacks.bufdelete keeps the window layout; :bdelete closes the split too.
+map("n", "<leader>bd", function()
+	Snacks.bufdelete()
+end, { desc = "Delete buffer" })

@@ -28,7 +28,8 @@ return {
 				res[#res + 1] = { " \u{25cf}", group = "DiagnosticWarn" } -- ●
 			end
 
-			local sym = ((vim.diagnostic.config() or {}).signs or {}).text or {}
+			local signs = (vim.diagnostic.config() or {}).signs
+			local sym = type(signs) == "table" and signs.text or {}
 			local hl = {
 				[vim.diagnostic.severity.ERROR] = "DiagnosticError",
 				[vim.diagnostic.severity.WARN] = "DiagnosticWarn",
