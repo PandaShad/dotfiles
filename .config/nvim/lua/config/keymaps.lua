@@ -2,7 +2,6 @@ local map = vim.keymap.set
 
 -- Escape hatches
 map("i", "jk", "<ESC>", { desc = "Exit insert mode" })
-map("n", "<leader>nh", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 
 -- Keep the cursor centred on big jumps and search hops
