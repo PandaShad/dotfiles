@@ -37,6 +37,7 @@ opt.colorcolumn = "80"
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 opt.smoothscroll = true
+opt.showmode = false -- lualine renders the mode; avoids a duplicate
 
 -- Borders. 0.12 makes these global, so plugins no longer each need a
 -- `border = "rounded"` of their own -- floats and the popupmenu just inherit.
