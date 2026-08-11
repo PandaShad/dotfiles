@@ -80,4 +80,18 @@ return {
 			vim.g.nord_disable_background = false
 		end,
 	},
+
+	-- Tokyonight
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+
+	-- Monochrome
+	{
+		"kdheepak/monochrome.nvim",
+		lazy = true,
+	},
 }
